@@ -1,0 +1,31 @@
+{
+  "name": "avatargenerator",
+  "version": "1.0.0",
+  "description": "generates an avatar",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sriharikapu/avatargenerator.git"
+  },
+  "keywords": [
+    "avatar",
+    "automation"
+  ],
+  "author": "sriharikapu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sriharikapu/avatargenerator/issues"
+  },
+  "homepage": "https://github.com/sriharikapu/avatargenerator#readme",
+  "devDependencies": {
+    "avatar-builder": "^1.0.2",
+    "bin2png": "^0.2.4",
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "jimp": "^0.16.1",
+    "robotjs": "^0.6.0"
+  }
+}
