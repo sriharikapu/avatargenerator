@@ -15,9 +15,8 @@ async function pngConverter(value){
 app.post('/generateImage', async (req, res) => {
     try
     {
-
         const buf = await pngConverter(req.body.value);
-        console.log(buf);
+        // console.log(buf);
         res.send({
             error: 0,
             buf: buf
