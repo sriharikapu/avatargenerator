@@ -4,18 +4,30 @@ let express = require('express');
 let bodyParser = require('body-parser');
 let app = express();
 app.use(bodyParser.json());
+const randomAvatarGenerator = require("@fractalsoftware/random-avatar-generator");
 
-async function pngConverter(value){
-    let val = await avatar.create(value).then(buffer => {/* png buffer */ 
-        return buffer;
-    });
-    return val;
+// Using default method parameters
+// fs.writeFileSync("avatar.svg", randomAvatarGenerator.getRandomAvatar());
+
+async function svgConverter(value){
+    // let val = await avatar.create(value).then(buffer => {/* png buffer */ 
+    //     return buffer;
+    // });
+    // return val;
+
+    const avatarData = randomAvatarGenerator.generateRandomAvatarData(value);
+    // console.log(avatarData);
+    const svgCode = randomAvatarGenerator.getAvatarFromData(avatarData);
+    // console.log(svgCode);
+    return  svgCode;
 } 
 
-app.post('/generateImage', async (req, res) => {
+
+
+app.get('/generateImage', async (req, res) => {
     try
     {
-        const buf = await pngConverter(req.body.value);
+        const buf = await svgConverter(req.body.value);
         // console.log(buf);
         res.send({
             error: 0,
