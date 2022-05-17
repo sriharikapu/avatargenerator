@@ -24,7 +24,7 @@ async function svgConverter(value){
 
 
 
-app.get('/generateImage', async (req, res) => {
+app.post('/generateImage', async (req, res) => {
     try
     {
         const buf = await svgConverter(req.body.value);
